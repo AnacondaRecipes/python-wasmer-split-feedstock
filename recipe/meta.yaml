@@ -2,6 +2,7 @@
 
 package:
   name: python-wasmer-split
+  version: {{ version }}
 
 source:
   - url: https://github.com/wasmerio/wasmer-python/archive/refs/tags/{{ version }}.tar.gz
@@ -47,6 +48,10 @@ outputs:
     version: {{ version }}
     script: build_wasmer.sh  # [unix]
     script: build_wasmer.bat  # [win]
+
+    build:
+      ignore_run_exports:
+         - python-wasmer
 
     requirements:
       build:
