@@ -152,10 +152,16 @@ about:
   license_family: MIT
   license_file: LICENSE
   summary: WebAssembly runtime for Python
+  description: Wasmer is a fast and secure WebAssembly runtime that enables super lightweight containers to run anywhere: from Desktop to the Cloud, Edge and IoT devices.
   doc_url: https://docs.wasmer.io
   dev_url: https://github.com/wasmerio/wasmer
+  doc_source_url: https://github.com/wasmerio/wasmer/tree/master/docs
+  license_url: https://github.com/wasmerio/wasmer/blob/master/LICENSE
+  
 
 extra:
+  skip-lints:
+    - missing_tests
   feedstock-name: python-wasmer-split
   recipe-maintainers:
     - atrawog
