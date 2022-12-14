@@ -20,6 +20,8 @@ outputs:
     build:
       run_exports:
         - python-wasmer
+      ignore_run_exports:
+        - python
     requirements:
       build:
         - {{ compiler('c') }}
@@ -106,45 +108,6 @@ outputs:
     test:
       imports:
         - wasmer_compiler_singlepass  # [unix]
-
-
-  - name: python-wasmer-compiler-llvm
-    version: {{ version }}
-    script: build_wasmer.sh  # [unix]
-
-    build:
-      skip: true  # [win]
-
-    requirements:
-      build:
-        - {{ compiler('c') }}
-        - {{ compiler('cxx') }}
-        - {{ compiler('rust') }}
-        - cargo-bundle-licenses
-
-      host:
-        - python
-        - pip
-        - maturin
-        - pytest
-        - pytest-benchmark
-        - clang
-        - llvmdev
-        - python-wasmer
-        - python-wasmer-compiler-cranelift
-
-      run:
-        - clang
-        - libzlib
-        - libffi
-        - libstdcxx-ng  # [linux64]
-        - python-wasmer
-        - python
-
-    test:
-      imports:
-        - wasmer_compiler_llvm  # [unix]
-
 
 about:
   home: https://wasmer.io
