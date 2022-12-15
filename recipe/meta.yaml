@@ -85,6 +85,9 @@ outputs:
 
     build:
       skip: true  # [win]
+      ignore_run_exports:
+        - python-wasmer
+        - python
 
     requirements:
       build:
